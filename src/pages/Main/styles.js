@@ -1,20 +1,18 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const Title = styled.h1`
-  color: #fff;
-`;
-
 export const Form = styled.form`
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
 
-  input: {
+  input {
     flex: 1;
-    border: 1px solid #eee;
+    border: 1px solid ${props => (props.error ? '#ff6b6b' : '#eee')};
     padding: 10px 15px;
     border-radius: 4px;
     font-size: 16px;
+
+    transition: border 0.25s ease-out;
   }
 `;
 
@@ -22,6 +20,7 @@ const rotate = keyframes`
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
